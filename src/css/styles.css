@@ -1,0 +1,39 @@
+/* Global styles live here.... */
+
+html {
+    background-color: #333;
+    color: #fff;
+    overflow-x: hidden;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#word-container {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+#guesses-container {
+    margin-top: 20px;
+}
+
+#guesses {
+    font-weight: bold;
+}
+
+#input-container {
+    margin-top: 20px;
+}
+
+#letter-input {
+    padding: 5px;
+    font-size: 18px;
+}
+
+#guess-btn {
+    padding: 5px 10px;
+    font-size: 18px;
+    margin-left: 10px;
+}
