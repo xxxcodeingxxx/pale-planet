@@ -1,5 +1,21 @@
 // Javascript lives here....
 console.log('Connected!!!!')
+const head = $('#Head')
+const body = $('#Torso')
+const armL = $('#LArm')
+const armR = $('#RArm')
+const legL = $('#LLeg')
+const legR = $('#RLeg')
+
+function hangIt() {
+    let hangMan = [head, body, armL, armR, legL, legR]
+    let usedParts = []
+    let parts = hangMan[Math.floor(Math.random() * hangMan.length)]
+    usedParts.join(parts)
+
+    console.log(usedParts)
+}
+
 const words = [
     'HELLO',
     'WORLD',
@@ -68,6 +84,7 @@ function makeGuess() {
         incorrectGuesses.push(letter)
         updateGuesses()
         checkGameStatus()
+        hangIt()
     }
 }
 
