@@ -1,20 +1,21 @@
 // Javascript lives here....
 console.log('Connected!!!!')
-const head = $('#Head')
-const body = $('#Torso')
-const armL = $('#LArm')
-const armR = $('#RArm')
-const legL = $('#LLeg')
-const legR = $('#RLeg')
+// const head = $('#Head')
+// const body = $('#Torso')
+// const armL = $('#LArm')
+// const armR = $('#RArm')
+// const legL = $('#LLeg')
+// const legR = $('#RLeg')
+const alerts = $('#alerts')
 
-function hangIt() {
-    let hangMan = [head, body, armL, armR, legL, legR]
-    let usedParts = []
-    let parts = hangMan[Math.floor(Math.random() * hangMan.length)]
-    usedParts.join(parts)
+// function hangIt() {
+//     let hangMan = [head, body, armL, armR, legL, legR]
+//     let usedParts = []
+//     let parts = hangMan[Math.floor(Math.random() * hangMan.length)]
+//     usedParts.join(parts)
 
-    console.log(usedParts)
-}
+//     console.log(usedParts)
+// }
 
 const words = [
     'HELLO',
@@ -71,8 +72,13 @@ function makeGuess() {
 
     // Check if the letter has already been guessed
     if (correctGuesses.includes(letter) || incorrectGuesses.includes(letter)) {
-        alert('You already guessed that letter!')
+        // alert('You already guessed that letter!')
+        alerts.text('You already guessed that letter!')
+        alerts.addClass('fadeOut')
         return
+    } else {
+        alerts.text('')
+        alerts.removeClass('fadeOut')
     }
 
     // Check if the letter is correct
@@ -84,7 +90,6 @@ function makeGuess() {
         incorrectGuesses.push(letter)
         updateGuesses()
         checkGameStatus()
-        hangIt()
     }
 }
 
@@ -132,9 +137,15 @@ function endGame(hasWon) {
     letterInput.disabled = true
 
     if (hasWon) {
-        alert('Congratulations! You guessed the word correctly!')
+        // alert('Congratulations! You guessed the word correctly!')
+        alerts
+            .text('Congratulations! You guessed the word correctly!')
+            .addClass('text-green-500')
     } else {
-        alert('Game over! You ran out of guesses. The word was: ' + word)
+        // alert('Game over! You ran out of guesses. The word was: ' + word)
+        alerts
+            .text('Game over! You ran out of guesses. The word was: ' + word)
+            .addClass('text-red-500')
     }
 }
 

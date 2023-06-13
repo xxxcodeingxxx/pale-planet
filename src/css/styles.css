@@ -1,13 +1,14 @@
 /* Global styles live here.... */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;900&display=swap');
 
 html {
     background-color: #333;
     color: #fff;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 body {
-    font-family: Arial, sans-serif;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #word-container {
@@ -40,4 +41,19 @@ body {
 
 #head {
     transform: rotate(90deg);
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
 }
