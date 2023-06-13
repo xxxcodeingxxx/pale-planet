@@ -3,8 +3,13 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Hangman Game">
-	<div id="hangmanGame" class="py-20">
-		<h1 class="text-6xl text-indigo-500">Hangman Game</h1>
+	<div id="hangmanGame" class="p-6 md:p-12">
+		<!-- <h1 class="text-6xl text-indigo-500">Hangman Game</h1> -->
+		<img
+			src="/images/hmLetter.svg"
+			alt="HangMan"
+			class="w-[800px] mx-auto h-auto"
+		/>
 		<div
 			id="alerts"
 			class="text-3xl text-center pt-20 font-[200] text-red-500"
